@@ -6,6 +6,11 @@ export type Opaque<IdType, EntityName> = IdType & {
 
 export type ProductId = Opaque<number, 'Product'>;
 
+export interface Rating {
+  rate: number;
+  count: number;
+}
+
 export interface Product {
   id: ProductId;
   title: string;
@@ -13,4 +18,5 @@ export interface Product {
   category: string;
   description: string;
   image: string;
+  rating: Rating;
 }
