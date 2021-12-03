@@ -5,11 +5,15 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 
-export function createStore(
-  preloadedState?: PreloadedState<Record<string, unknown>>,
-) {
+import productsReducer, {
+  ProductsState,
+} from '../features/products/productsSlice';
+
+export function createStore(preloadedState?: PreloadedState<AppState>) {
   return configureStore({
-    reducer: {},
+    reducer: {
+      products: productsReducer,
+    },
     preloadedState,
     devTools: true,
   });
@@ -17,7 +21,9 @@ export function createStore(
 
 const store = createStore();
 
-export type AppState = ReturnType<typeof store.getState>;
+export type AppState = {
+  products: ProductsState;
+};
 
 export type AppDispatch = typeof store.dispatch;
 
