@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import type { AppDispatch } from '../../app/store';
 import { Product } from '../../app/types';
 import { fetchProducts, selectProducts } from './productsSlice';
 
@@ -11,7 +12,7 @@ export type ProductProps = {
 
 const ProductItem = ({ product }: ProductProps) => {
   return (
-    <div className="four wide column">
+    <div className="four wide column" data-testid="product-item">
       <Link to={`/product/${product.id}`}>
         <div className="ui link cards">
           <div className="card">
@@ -31,8 +32,8 @@ const ProductItem = ({ product }: ProductProps) => {
 };
 
 const ProductList = () => {
-  const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
+  const dispatch = useDispatch<AppDispatch>();
+  const products = useSelector(selectProducts);
 
   useEffect(() => {
     void dispatch(fetchProducts());
