@@ -8,8 +8,8 @@ import App from './App';
 import { createStore } from './app/store';
 import products from './fixtures/products.json';
 
-describe('<App>', () => {
-  it('renders the app', () => {
+describe('<App>', function () {
+  it('renders the app', function () {
     const store = createStore();
 
     render(
@@ -27,7 +27,7 @@ describe('<App>', () => {
     );
   });
 
-  it("navigate to product's details", async () => {
+  it("navigate to product's details", async function () {
     const [product] = products;
     const store = createStore({
       products: {

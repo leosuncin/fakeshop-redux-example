@@ -8,8 +8,8 @@ import { createStore } from '../../app/store';
 import products from '../../fixtures/products.json';
 import ProductList from './ProductList';
 
-describe('<ProductList />', () => {
-  it('render the list of products', async () => {
+describe('<ProductList />', function () {
+  it('render the list of products', async function () {
     const store = createStore();
 
     fetchMock.getOnce('path:/products', products);

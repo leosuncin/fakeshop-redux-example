@@ -6,8 +6,8 @@ import Header from './Header';
 
 use(chaiDom);
 
-describe('<Header />', () => {
-  it('should render', () => {
+describe('<Header />', function () {
+  it('should render', function () {
     render(<Header />);
 
     expect(screen.getByRole('heading')).to.have.text('FakeShop');
