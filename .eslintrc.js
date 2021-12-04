@@ -49,6 +49,16 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': 'warn',
     'jsx-a11y/scope': 'warn',
   },
+  overrides: [
+    {
+      files: ['**/*.test.{ts,tsx}'],
+      plugins: ['mocha-no-only'],
+      extends: ['plugin:mocha/recommended', 'plugin:testing-library/react'],
+      rules: {
+        'mocha-no-only/mocha-no-only': ['error'],
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',
