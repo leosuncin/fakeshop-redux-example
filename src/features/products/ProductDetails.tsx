@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import type { AppDispatch } from '../../app/store';
 import { ProductId } from '../../app/types';
 import { fetchProduct, removeProduct, selectProduct } from './productsSlice';
 
 const ProductDetails = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { productId } = useParams();
-  const product = useAppSelector(selectProduct);
+  const product = useSelector(selectProduct);
 
   useEffect(() => {
     if (productId) {
