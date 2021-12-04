@@ -33,6 +33,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.3.0
   eslint-plugin-simple-import-sort: ^7.0.0
   eslint-plugin-sonarjs: ^0.11.0
+  fetch-mock: ^9.11.0
   husky: ^7.0.4
   lint-staged: ^12.1.2
   msw: ^0.35.0
@@ -89,6 +90,7 @@ devDependencies:
   eslint-plugin-react-hooks: 4.3.0_eslint@8.3.0
   eslint-plugin-simple-import-sort: 7.0.0_eslint@8.3.0
   eslint-plugin-sonarjs: 0.11.0_eslint@8.3.0
+  fetch-mock: 9.11.0
   husky: 7.0.4
   lint-staged: 12.1.2
   msw: 0.35.0
@@ -1989,6 +1991,11 @@ packages:
     requiresBuild: true
     dev: true
 
+  /core-js/3.19.2:
+    resolution: {integrity: sha512-ciYCResnLIATSsXuXnIOH4CbdfgV+H1Ltg16hJFN7/v6OxqnFr/IFGeLacaZ+fHLAm0TBbXwNK9/DNBzBUrO/g==}
+    requiresBuild: true
+    dev: true
+
   /cosmiconfig/7.0.1:
     resolution: {integrity: sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==}
     engines: {node: '>=10'}
@@ -2849,6 +2856,29 @@ packages:
       pend: 1.2.0
     dev: true
 
+  /fetch-mock/9.11.0:
+    resolution: {integrity: sha512-PG1XUv+x7iag5p/iNHD4/jdpxL9FtVSqRMUQhPab4hVDt80T1MH5ehzVrL2IdXO9Q2iBggArFvPqjUbHFuI58Q==}
+    engines: {node: '>=4.0.0'}
+    peerDependencies:
+      node-fetch: '*'
+    peerDependenciesMeta:
+      node-fetch:
+        optional: true
+    dependencies:
+      '@babel/core': 7.16.0
+      '@babel/runtime': 7.16.3
+      core-js: 3.19.2
+      debug: 4.3.3
+      glob-to-regexp: 0.4.1
+      is-subset: 0.1.1
+      lodash.isequal: 4.5.0
+      path-to-regexp: 2.4.0
+      querystring: 0.2.1
+      whatwg-url: 6.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /figures/3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -3016,6 +3046,10 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       is-glob: 4.0.3
+    dev: true
+
+  /glob-to-regexp/0.4.1:
+    resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
     dev: true
 
   /glob/7.2.0:
@@ -3429,6 +3463,10 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
+  /is-subset/0.1.1:
+    resolution: {integrity: sha1-ilkRfZMt4d4A8kX83TnOQ/HpOaY=}
+    dev: true
+
   /is-symbol/1.0.4:
     resolution: {integrity: sha512-C/CPBqKWnvdcxqIARxyOh4v1UUEOCHpgDa0WYgpKDFMszcrPcffg5uhwSgPCLD2WWxmq6isisz87tzT01tuGhg==}
     engines: {node: '>= 0.4'}
@@ -3760,8 +3798,16 @@ packages:
     resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
     dev: true
 
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=}
+    dev: true
+
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
+
+  /lodash.sortby/4.7.0:
+    resolution: {integrity: sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=}
     dev: true
 
   /lodash/4.17.21:
@@ -4283,6 +4329,10 @@ packages:
       isarray: 0.0.1
     dev: true
 
+  /path-to-regexp/2.4.0:
+    resolution: {integrity: sha512-G6zHoVqC6GGTQkZwF4lkuEyMbVOjoBKAEybQUypI1WTkqinCOrq2x6U2+phkJ1XsEMTy4LjtwPI7HW+NVrRR2w==}
+    dev: true
+
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -4434,6 +4484,12 @@ packages:
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.4
+    dev: true
+
+  /querystring/0.2.1:
+    resolution: {integrity: sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==}
+    engines: {node: '>=0.4.x'}
+    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: true
 
   /queue-microtask/1.2.3:
@@ -5104,6 +5160,12 @@ packages:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
     dev: true
 
+  /tr46/1.0.1:
+    resolution: {integrity: sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=}
+    dependencies:
+      punycode: 2.1.1
+    dev: true
+
   /tr46/3.0.0:
     resolution: {integrity: sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==}
     engines: {node: '>=12'}
@@ -5333,6 +5395,10 @@ packages:
     resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
     dev: true
 
+  /webidl-conversions/4.0.2:
+    resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
+    dev: true
+
   /webidl-conversions/7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
@@ -5351,6 +5417,14 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+    dev: true
+
+  /whatwg-url/6.5.0:
+    resolution: {integrity: sha512-rhRZRqx/TLJQWUpQ6bmrt2UV4f0HCQ463yQuONJqC6fO2VoEb1pTYddbe59SkYq87aoM5A3bdhMZiUiVws+fzQ==}
+    dependencies:
+      lodash.sortby: 4.7.0
+      tr46: 1.0.1
+      webidl-conversions: 4.0.2
     dev: true
 
   /which-boxed-primitive/1.0.2:

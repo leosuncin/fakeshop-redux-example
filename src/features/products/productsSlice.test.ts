@@ -1,4 +1,5 @@
 import { expect, use } from 'chai';
+import fetchMock from 'fetch-mock';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
@@ -72,6 +73,7 @@ describe('Thunk actions', () => {
     const dispatch = sinon.spy();
     const thunk = fetchProducts();
 
+    fetchMock.getOnce('path:/products', products);
     await thunk(dispatch, () => state, undefined);
 
     expect(dispatch).to.have.callCount(2);
@@ -86,12 +88,14 @@ describe('Thunk actions', () => {
   });
 
   it('fetch one product', async () => {
+    const [product] = products;
     const state: AppState = {
       products: initialState,
     };
     const dispatch = sinon.spy();
-    const thunk = fetchProduct(products[0].id);
+    const thunk = fetchProduct(product.id);
 
+    fetchMock.getOnce(/.*\/products\/\d+$/, product);
     await thunk(dispatch, () => state, undefined);
 
     expect(dispatch).to.have.callCount(2);
