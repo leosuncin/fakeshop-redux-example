@@ -27,6 +27,7 @@
     "@testing-library/dom": "^8.11.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/babel__core": "^7.1.16",
     "@types/chai": "^4.2.22",
     "@types/chai-dom": "^0.0.12",
     "@types/mocha": "^9.0.0",
