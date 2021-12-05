@@ -61,7 +61,12 @@ jobs:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-pkg-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Run tests 🧪
-        run: pnpm test -- --coverage
+        uses: nick-invision/retry@v2
+        with:
+          timeout_seconds: 15
+          max_attempts: 3
+          retry_on: error
+          command: pnpm test -- --coverage
       - name: Upload code coverage ⬆️
         uses: actions/upload-artifact@v2
         with:
